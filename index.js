@@ -7,7 +7,6 @@ const client = new Client({
 });
 const config = require("./src/config.js");
 const { readdirSync } = require("node:fs");
-const fetch = require("node-fetch")
 const axios = require('axios');
 const mongoose = require('mongoose');
 const autoresSchema = require('./schemas/autores')
