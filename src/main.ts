@@ -4,11 +4,15 @@ import { loadEvents } from './utils/loadEvents';
 import mongoose from 'mongoose';
 import 'dotenv/config';
 
+console.log('[BOT] Launching...');
+console.log('[ENV] TOKEN:', process.env.TOKEN ? 'Loaded' : 'Missing');
+console.log('[ENV] MONGO_URI:', process.env.MONGO_URI ? 'Loaded' : 'Missing');
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.MessageContent
+    GatewayIntentBits.MessageContent 
   ]
 });
 
@@ -23,7 +27,9 @@ client.commands = new Collection();
     await loadCommands(client);
     await loadEvents(client);
 
-    client.login(process.env.TOKEN);
+    console.log('[DISCORD] Logging in...');
+    await client.login(process.env.TOKEN);
+    console.log('[DISCORD] Logged in!');
   } catch (err) {
     console.error('[ERROR]', err);
   }
