@@ -1,4 +1,4 @@
 export const BOT_CONFIG = {
-  developers: ['YOUR_USER_ID'],
-  guildId: 'YOUR_GUILD_ID'
+  developers: ['715783278237450280'],
+  guildId: '840157628628729857'
 };
