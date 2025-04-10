@@ -30,7 +30,8 @@ client.commands = new Collection();
     console.log('[DISCORD] Logging in...');
     await client.login(process.env.TOKEN);
     console.log('[DISCORD] Logged in!');
-  } catch (err) {
-    console.error('[ERROR]', err);
-  }
+} catch (err) {
+  console.error('[ERROR]', err);
+  console.error('[ERROR STACK]', (err as any).stack);
+}
 })();
